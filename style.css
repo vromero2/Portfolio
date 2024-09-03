@@ -323,7 +323,7 @@ footer p {
     }
 }
 
-.about .card, .curriculum .card, .services .card {
+.about .card, .curriculum .card, .services .card, contact .card{
     animation: fadeInUp 1s ease-out;
 }
 
@@ -419,4 +419,13 @@ footer p {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.contact{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
 }
