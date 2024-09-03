@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Fjalla+One&display=swap');
+
+* {
+    font-family: 'VT323', monospace;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./assets/img/puntitos.png);
+    margin: 0;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: relative;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.navbar ul li a {
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 10px;
+    text-decoration: none;
+    color: #dcd1e1;
+}
+
+.navbar ul li a:hover {
+    color: #fff;
+    background-color: #5f11b3;
+    border-radius: 5px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-list.active {
+    display: flex;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .navbar ul li {
+        display: block;
+        margin: 0;
+    }
+}
+
+.title {
+    text-align: center;
+    font-size: 38px;
+    margin-top: 50px;
+}
+
+.titles:hover {
+    color: #5f11b3;
+    transform: scale(1.1);
+    transition: transform 0.6s, color 0.3s;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.profile-image {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.download-button {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 14px;
+    overflow: hidden;
+    z-index: 1;
+    border: 1px solid rgb(221, 218, 218);
+    background: white;
+    font-weight: bold;
+    font-size: 16px;
+    color: #552b5c;
+    transition: all 1.2s linear;
+    cursor: pointer;
+}
+
+.button::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(to right, #8a0c7b, #b819e456);
+    border-radius: 30%;
+    height: 96px;
+    width: 96px;
+    animation: spin infinite linear 1.8s;
+    bottom: -38px;
+    right: -112px;
+    transition: all 1.2s linear;
+    z-index: 0;
+}
+
+.button:hover {
+    color: #fff;
+    transition-duration: 1.2s;
+}
+
+.button:hover::after {
+    right: -60px;
+    bottom: -92px;
+    width: 256px;
+    height: 256px;
+}
+
+.button > .button-content {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
+.about, .curriculum, .services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-image: url(./assets/img/puntitos.png);
+    background-size: cover;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    width: 80%;
+    text-align: center;
+    border: 2px solid #552b5c;
+    animation: fadeInUp 1s ease-out;
+}
+
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #552b5c;
+    font-family: 'Anton', sans-serif;
+}
+
+.card p {
+    font-size: 18px;
+    color: #333;
+    font-family: 'VT323', monospace;
+}
+
+footer {
+    background-color: #333;
+    color: #dcd1e1;
+    padding: 20px 0;
+    text-align: center;
+    font-family: 'VT323', monospace;
+}
+
+footer p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.social-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social-links li {
+    margin: 0 10px;
+}
+
+.social-links li a {
+    color: #dcd1e1;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-links li a:hover {
+    color: #5f11b3;
+}
+
+.job {
+    margin-bottom: 20px;
+}
+
+.job h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+.job h3 span {
+    font-size: 16px;
+    color: #555;
+    float: right;
+    font-weight: normal;
+}
+
+.job h4 {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #552b5c;
+    font-family: 'Anton', sans-serif;
+}
+
+.job p, .job ul {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+}
+
+.job ul {
+    padding-left: 20px;
+}
+
+.job ul li {
+    list-style-type: disc;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.about .card, .curriculum .card, .services .card {
+    animation: fadeInUp 1s ease-out;
+}
+
+.service-list li {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.service-list li:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.service-list li:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.service-list li:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.service-list li:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.service-list li:nth-child(5) {
+    animation-delay: 1.1s;
+}
+
+.service-list li:nth-child(6) {
+    animation-delay: 1.3s;
+}
+
+.service-list li:nth-child(7) {
+    animation-delay: 1.5s;
+}
+
+.service-list li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 5px 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.service-list li a:hover {
+    color: #8a0c7b;
+    transform: scale(1.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    transition: transform 0.5s ease;
+}
+.intro {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.intro h1 {
+    font-family: 'Anton', sans-serif;
+    color: #5f11b3;
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.intro p {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.intro .button {
+    background-color: #5f11b3;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.intro .button:hover {
+    background-color: #8a0c7b;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
