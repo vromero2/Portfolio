@@ -449,11 +449,11 @@ footer p {
 }
 
 .form-group textarea {
-    resize: vertical; /* Permite cambiar el tamaño verticalmente */
-    height: 100px; /* Altura inicial del textarea */
+    resize: vertical; 
+    height: 100px; 
 }
 
-/* Estilos para el botón de envío */
+
 button[type="button"] {
     background-color: #3498db;
     color: #fff;
