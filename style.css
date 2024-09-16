@@ -52,6 +52,7 @@ body {
     padding: 10px;
     text-decoration: none;
     color: #dcd1e1;
+    font-size: larger;
 }
 
 .navbar ul li a:hover {
