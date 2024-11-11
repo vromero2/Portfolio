@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curriculum</title>
+    <title>Mi Curriculum</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -25,25 +25,31 @@
             <h2>Experiencia Laboral</h2>
             <div class="job">
                 <h3>ALEM PRODUCTOS <span>Enero 2023 – Abril 2023</span></h3>
-                <h4>Operador Telefónico</h4>
-                <p>Aumentar las ventas, brindar servicio al cliente personalizado, optimizar los recursos, retener a los clientes.</p>
+                <div class="job-details">
+                    <h4>Operador Telefónico</h4>
+                    <p>Aumentar las ventas, brindar servicio al cliente personalizado, optimizar los recursos, retener a los clientes.</p>
+                </div>
             </div>
 
             <div class="job">
                 <h3>ESPACIO ALAI <span>Noviembre 2021 – Enero 2022</span></h3>
-                <h4>Community Manager</h4>
-                <p>Creación de contenido, redacción, análisis de la competencia, gestión de redes sociales.</p>
+                <div class="job-details">
+                    <h4>Community Manager</h4>
+                    <p>Creación de contenido, redacción, análisis de la competencia, gestión de redes sociales.</p>
+                </div>
             </div>
 
             <div class="job">
                 <h3>TAXES SOFTWARE <span>Mayo 2023 – Presente</span></h3>
-                <h4>Desarrollador Front end</h4>
-                <ul>
-                    <li>Desarrollar con HTML, CSS y JavaScript</li>
-                    <li>Mantenimiento y optimización de sitios web e interfaces de usuario</li>
-                    <li>Crear herramientas y elementos que mejoren la interacción con el sitio en cualquier dispositivo o browser</li>
-                    <li>Gestionar el flujo de trabajo del software</li>
-                </ul>
+                <div class="job-details">
+                    <h4>Desarrollador Front end</h4>
+                    <ul>
+                        <li>Desarrollar con HTML, CSS y JavaScript</li>
+                        <li>Mantenimiento y optimización de sitios web e interfaces de usuario</li>
+                        <li>Crear herramientas y elementos que mejoren la interacción con el sitio en cualquier dispositivo o browser</li>
+                        <li>Gestionar el flujo de trabajo del software</li>
+                    </ul>
+                </div>
             </div>
             <button class="button">
                 <a class="button-content" href="./assets/romero-cv.pdf" target="_blank">Descargar CV</a>
@@ -59,6 +65,14 @@
             <li><a href="https://instagram.com/valentinrxk" target="_blank">Instagram</a></li>
         </ul>
     </footer>
+    <script>
+        document.querySelectorAll('.job h3').forEach(jobTitle => {
+            jobTitle.addEventListener('click', () => {
+                const jobDetails = jobTitle.nextElementSibling;
+                jobDetails.style.display = jobDetails.style.display === 'none' || jobDetails.style.display === '' ? 'block' : 'none';
+            });
+        });
+    </script>
 </body>
 </html>
 <style>
