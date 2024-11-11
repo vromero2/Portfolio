@@ -42,10 +42,85 @@
             <li><a href="https://instagram.com/valentinrxk" target="_blank">Instagram</a></li>
         </ul>
     </footer>
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h3>Contáctame por WhatsApp</h3>
+          <p>¿Estás interesado en este servicio? ¡Hablemos!</p>
+          <a id="whatsappLink" href="" target="_blank" class="whatsapp-button">Contactar por WhatsApp</a>
+        </div>
+      </div>
+      
+      <style>
+        /* Estilos del modal */
+        .modal {
+          display: none; /* Oculto por defecto */
+          position: fixed;
+          z-index: 1;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-content {
+          background-color: #fff;
+          margin: 15% auto;
+          padding: 20px;
+          border-radius: 8px;
+          width: 80%;
+          max-width: 400px;
+          text-align: center;
+        }
+        
+        .close-button {
+          float: right;
+          font-size: 20px;
+          cursor: pointer;
+        }
+        
+        .whatsapp-button {
+          display: inline-block;
+          margin-top: 10px;
+          padding: 10px 20px;
+          background-color: #25D366;
+          color: #fff;
+          text-decoration: none;
+          border-radius: 5px;
+        }
+        .li-servicios{
+        background-color: black;
+    }
+      </style>
 </body>
 </html>
 <style>
-    .li-servicios{
-        background-color: black;
-    }
 </style>
+<script>
+    const modal = document.getElementById("contactModal");
+    const closeButton = document.querySelector(".close-button");
+    const whatsappLink = document.getElementById("whatsappLink");
+  
+
+    document.querySelectorAll(".service-list a").forEach(link => {
+      link.addEventListener("click", function(event) {
+        event.preventDefault();
+        const whatsappHref = this.href; 
+        whatsappLink.href = whatsappHref; 
+        modal.style.display = "block"; 
+      });
+    });
+  
+    
+    closeButton.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  
+    
+    window.addEventListener("click", event => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
