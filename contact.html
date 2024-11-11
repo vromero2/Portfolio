@@ -20,27 +20,27 @@
         </ul>
     </div>
     <div class="contact">
-    <div class="card">
-        <h2>¡Hablemos de tu próximo proyecto! 🚀</h2>
-        <p>¿Tenés una idea increíble y necesitás darle vida en la web? Estoy acá para ayudarte. Como programador frontend, me encargo de transformar tus ideas en una experiencia visual impactante y funcional. Completá el formulario y empecemos a crear juntos algo único. 💻✨</p>
-        <p>👉 Contame sobre tu proyecto, tus necesidades o cualquier duda que tengas. Estoy listo para escucharte y ofrecerte la mejor solución.</p>
-        <form>
-            <h2>Contacto</h2>
-            <div class="form-group">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Correo:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="button">Submit</button>
-        </form>
-    </div>
+        <div class="card">
+            <h2>¡Hablemos de tu próximo proyecto! 🚀</h2>
+            <p>¿Tenés una idea increíble y necesitás darle vida en la web? Estoy acá para ayudarte. Como programador frontend, me encargo de transformar tus ideas en una experiencia visual impactante y funcional. Completá el formulario y empecemos a crear juntos algo único. 💻✨</p>
+            <p>👉 Contame sobre tu proyecto, tus necesidades o cualquier duda que tengas. Estoy listo para escucharte y ofrecerte la mejor solución.</p>
+            <form id="contactForm" onsubmit="return validateForm()">
+                <h2>Contacto</h2>
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
     <footer>
         <p>Conéctate conmigo en redes sociales:</p>
@@ -50,6 +50,31 @@
             <li><a href="https://instagram.com/valentinrxk" target="_blank">Instagram</a></li>
         </ul>
     </footer>
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (name.trim() === "") {
+                alert("Por favor, ingrese su nombre.");
+                return false;
+            }
+
+            if (!emailPattern.test(email)) {
+                alert("Por favor, ingrese un correo electrónico válido.");
+                return false;
+            }
+
+            if (message.trim() === "") {
+                alert("Por favor, ingrese su mensaje.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>
 <style>
